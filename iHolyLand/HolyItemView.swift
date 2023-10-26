@@ -7,56 +7,59 @@
 
 import UIKit
 import SnapKit
+import MapKit
+
+struct HolyLandModel {
+    var coordinate  :   CLLocationCoordinate2D?
+    var visitTime   :   Date?
+    var title       :   String?
+    var context     :   String?
+    var images      :   NSMutableArray?
+    var source      :   String?
+}
 
 class HolyItemView : UIView {
-    var _title: String?
-    var title: String? {
-        set {
-            _title = newValue
-        }
-        get {
-            return _title
-        }
+    var dataModel: HolyLandModel
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    var _textContext : String?
-    var textContext : String? {
-        set {
-            _textContext = newValue
-        }
-        get {
-            return _textContext
-        }
-    }
     
-    var _imageUrl : String?
-    var imageUrl : String? {
-        set {
-            _imageUrl = newValue
-        }
-        get {
-            return _imageUrl
-        }
+    init(dataModel: HolyLandModel) {
+        self.dataModel = dataModel
+        super.init(frame: .zero)
     }
     
     func layoutItemSubviews() {
-        let label = UILabel()
-        label.text = title
-        label.font = UIFont.boldSystemFont(ofSize: 32)
+        
+        var formattedDate = ""
+        if let unwrappedDate = dataModel.visitTime {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy年MM月dd日"
+            formattedDate = formatter.string(from: unwrappedDate)
+            print(formattedDate) // 输出格式化后的日期
+        } else {
+            print("Date is nil")
+        }
+        
+        let titleLabel = UILabel()
+        titleLabel.text = dataModel.title ?? "unknow"
+        titleLabel.text = (titleLabel.text ?? "unknow") + formattedDate
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 32)
         
         let contextLabel = UILabel()
-        contextLabel.text = textContext
+        contextLabel.text = dataModel.context ?? "unknow"
         contextLabel.font = UIFont.systemFont(ofSize: 14)
         contextLabel.numberOfLines = 0
         
-        self.addSubview(label)
+        self.addSubview(titleLabel)
         self.addSubview(contextLabel)
-        label.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.left.equalTo(self).offset(12)
             make.right.equalTo(self).offset(-12)
         }
         contextLabel.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.left.equalTo(self).offset(12)
             make.right.equalTo(self).offset(-12)
         }

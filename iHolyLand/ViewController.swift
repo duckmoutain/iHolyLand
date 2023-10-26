@@ -10,15 +10,10 @@ import SnapKit
 import Photos
 import CoreLocation
 
-struct HolyLandModel {
-    var coordinate  :   CLLocationCoordinate2D
-    var visitTime   :   Date
-    var title       :   String
-}
-
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     var plusButton: UIButton! = nil
     var personalBtn: UIButton! = nil
+    var holyLandItem: UIView = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     func layoutCustomSubViews() {
         
-        let ujiItem = HolyItemView()
+        let ujiItem = HolyItemView(dataModel: HolyLandModel(title: "uji", context: "LoganTestTest"))
         view.addSubview(ujiItem)
         
         let statusHeight = (UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.size.height)!
@@ -46,8 +41,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
             make.right.equalTo(view).offset(-12)
         }
         
-        ujiItem._title = "uji"
-        ujiItem.textContext = "宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます宇治市行きます"
         ujiItem.snp.makeConstraints { make in
             make.top.equalTo(plusButton.snp.bottom).offset(6)
             make.left.right.equalTo(view)
@@ -62,6 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         let geocoder = CLGeocoder()
         let location = asset?.location ??  CLLocation(latitude: 39.6895, longitude: 139.6917)
+        
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
             if error != nil {
                 NSLog(error?.localizedDescription ?? "error")
