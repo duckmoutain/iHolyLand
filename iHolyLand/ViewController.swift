@@ -13,7 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     var plusButton: UIButton! = nil
     var personalBtn: UIButton! = nil
-    var holyLandItem: UIView = nil
+    var holyLandItem: UIView! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
