@@ -6,6 +6,7 @@ target 'iHolyLand' do
   use_frameworks!
 	pod 'SnapKit'
   pod 'SDWebImage'
+  pod 'FMDB'
   # Pods for iHolyLand
   project 'iHolyLand.xcodeproj' 
 end
