@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C73D69731DA82A7DAB086C7D /* Pods_iHolyLand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB928614E5A5A5BF134EF002 /* Pods_iHolyLand.framework */; };
+		D0EF3C2F2B0A567E00DC1D50 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF3C2E2B0A567E00DC1D50 /* SQLiteManager.swift */; };
+		D0EF3C332B0A574B00DC1D50 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EF3C312B0A574B00DC1D50 /* libsqlite3.tbd */; };
+		D0EF3C342B0A574B00DC1D50 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EF3C322B0A574B00DC1D50 /* libsqlite3.0.tbd */; };
+		D0EF3C372B0A5A7800DC1D50 /* libarchive.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EF3C352B0A5A7700DC1D50 /* libarchive.tbd */; };
+		D0EF3C382B0A5A7800DC1D50 /* libarchive.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EF3C362B0A5A7700DC1D50 /* libarchive.2.tbd */; };
 		F85F07EC2AE532EA006465C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85F07EB2AE532EA006465C4 /* AppDelegate.swift */; };
 		F85F07F02AE532EA006465C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85F07EF2AE532EA006465C4 /* ViewController.swift */; };
 		F85F07F32AE532EA006465C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85F07F12AE532EA006465C4 /* Main.storyboard */; };
@@ -22,6 +27,12 @@
 		5ABDA863BBABE0843BA25FBB /* Pods-iHolyLand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHolyLand.release.xcconfig"; path = "Target Support Files/Pods-iHolyLand/Pods-iHolyLand.release.xcconfig"; sourceTree = "<group>"; };
 		7C7B2C747F5C22AF7CCBEDDC /* Pods-iHolyLand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHolyLand.debug.xcconfig"; path = "Target Support Files/Pods-iHolyLand/Pods-iHolyLand.debug.xcconfig"; sourceTree = "<group>"; };
 		CB928614E5A5A5BF134EF002 /* Pods_iHolyLand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHolyLand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EF3C2E2B0A567E00DC1D50 /* SQLiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		D0EF3C302B0A56B700DC1D50 /* swift-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift-bridge.h"; sourceTree = "<group>"; };
+		D0EF3C312B0A574B00DC1D50 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D0EF3C322B0A574B00DC1D50 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		D0EF3C352B0A5A7700DC1D50 /* libarchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.tbd; path = usr/lib/libarchive.tbd; sourceTree = SDKROOT; };
+		D0EF3C362B0A5A7700DC1D50 /* libarchive.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.2.tbd; path = usr/lib/libarchive.2.tbd; sourceTree = SDKROOT; };
 		F85F07E82AE532EA006465C4 /* iHolyLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHolyLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85F07EB2AE532EA006465C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F85F07EF2AE532EA006465C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +50,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EF3C372B0A5A7800DC1D50 /* libarchive.tbd in Frameworks */,
+				D0EF3C382B0A5A7800DC1D50 /* libarchive.2.tbd in Frameworks */,
+				D0EF3C332B0A574B00DC1D50 /* libsqlite3.tbd in Frameworks */,
+				D0EF3C342B0A574B00DC1D50 /* libsqlite3.0.tbd in Frameworks */,
 				C73D69731DA82A7DAB086C7D /* Pods_iHolyLand.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +64,10 @@
 		7F3260E6AA4217CCD10AAC9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0EF3C362B0A5A7700DC1D50 /* libarchive.2.tbd */,
+				D0EF3C352B0A5A7700DC1D50 /* libarchive.tbd */,
+				D0EF3C322B0A574B00DC1D50 /* libsqlite3.0.tbd */,
+				D0EF3C312B0A574B00DC1D50 /* libsqlite3.tbd */,
 				CB928614E5A5A5BF134EF002 /* Pods_iHolyLand.framework */,
 			);
 			name = Frameworks;
@@ -93,6 +112,8 @@
 				F85F07F42AE532EA006465C4 /* iHolyLand.xcdatamodeld */,
 				F88403EE2AE55BE300FBB9DF /* HolyItemView.swift */,
 				F88403F02AE5720600FBB9DF /* ImageSelectedViewController.swift */,
+				D0EF3C2E2B0A567E00DC1D50 /* SQLiteManager.swift */,
+				D0EF3C302B0A56B700DC1D50 /* swift-bridge.h */,
 			);
 			path = iHolyLand;
 			sourceTree = "<group>";
@@ -215,6 +236,7 @@
 				F85F07F02AE532EA006465C4 /* ViewController.swift in Sources */,
 				F88403F12AE5720600FBB9DF /* ImageSelectedViewController.swift in Sources */,
 				F88403EF2AE55BE300FBB9DF /* HolyItemView.swift in Sources */,
+				D0EF3C2F2B0A567E00DC1D50 /* SQLiteManager.swift in Sources */,
 				F85F07EC2AE532EA006465C4 /* AppDelegate.swift in Sources */,
 				F85F07F62AE532EA006465C4 /* iHolyLand.xcdatamodeld in Sources */,
 			);
@@ -387,6 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = duckmoutain.iHolyLand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "iHolyLand/swift-bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = duckmoutain.iHolyLand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "iHolyLand/swift-bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
