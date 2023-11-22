@@ -21,6 +21,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         self.layoutCustomSubViews()
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        createTable()
+    }
+    
+    // 创建表
+    func createTable() {
+        // 编写SQL语句（id: 主键  name和age是字段名）
+        let sql = "CREATE TABLE IF NOT EXISTS HolyLand( \n" +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+            "name TEXT, \n" +
+            "age INTEGER \n" +
+        "); \n"
+         
+        // 执行SQL语句（注意点: 在FMDB中除了查询意外, 都称之为更新）
+        let db = SQLiteManager.shareManger().db
+        if db.open() {
+            if db.executeUpdate(sql, withArgumentsIn: []){
+                print("创建表成功")
+            }else{
+                print("创建表失败")
+            }
+        }
+        db.close()
     }
     
     func layoutCustomSubViews() {
